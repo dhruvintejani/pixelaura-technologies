@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #f5f1ea;
+    --bg-secondary: #faf9f6;
+    --bg-muted: #e7e2db;
+    --bg-sand: #d8d2c8;
+    --text-dark: #1f1f1f;
+    --text-muted: #555555;
+    --navy: #1e2a39;
+    --gold: #b89b5e;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'DM Serif Display', serif;
+    line-height: 1.15;
+  }
+
+  ::selection {
+    background: #b89b5e22;
+    color: #1e2a39;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f5f1ea;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #d8d2c8;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b89b5e;
+  }
+
+  /* Remove default focus outline and use custom */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #b89b5e;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .font-sans-body {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .text-gold {
+    color: #b89b5e;
+  }
+
+  .text-navy {
+    color: #1e2a39;
+  }
+
+  .bg-primary {
+    background-color: #f5f1ea;
+  }
+
+  .bg-secondary {
+    background-color: #faf9f6;
+  }
+
+  .bg-muted {
+    background-color: #e7e2db;
+  }
+
+  .gold-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .gold-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: #b89b5e;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  .gold-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d8d2c8, transparent);
+    width: 100%;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+  }
+
+  .section-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #b89b5e;
+  }
+
+  .nav-link {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #555555;
+    transition: color 0.25s ease;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: #1f1f1f;
+  }
+}
