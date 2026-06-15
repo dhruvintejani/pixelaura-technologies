@@ -135,7 +135,7 @@ ${values.message}`,
   };
 
   return (
-    <section id="contact" className="py-28 lg:py-25 bg-[#f5f1ea]">
+    <section id="contact" className="py-25 lg:py-18 bg-[#f5f1ea]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
@@ -402,7 +402,7 @@ ${values.message}`,
                       whileHover={submitting ? {} : { y: -2 }}
                       whileTap={submitting ? {} : { scale: 0.98 }}
                       transition={{ duration: 0.2 }}
-                      className="mt-2 flex items-center justify-center gap-3 px-8 py-4 bg-[#1e2a39] text-[#faf9f6] rounded-full text-sm font-semibold tracking-wider uppercase font-sans-body transition-all duration-300 hover:bg-[#2a3a4d] disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="mt-2 cursor-pointer flex items-center justify-center gap-3 px-8 py-4 bg-[#1e2a39] text-[#faf9f6] rounded-full text-sm font-semibold tracking-wider uppercase font-sans-body transition-all duration-300 hover:bg-[#2a3a4d] disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {submitting ? (
                         <>

@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#projects' },
-  { label: 'Process', href: '#process' },
-  { label: 'Contact', href: '#contact' },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Work", href: "#projects" },
+  { label: "Process", href: "#process" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -15,13 +15,15 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   const handleNavClick = (href: string) => {
@@ -29,7 +31,7 @@ export default function Navbar() {
     const el = document.querySelector(href);
     if (el) {
       setTimeout(() => {
-        el.scrollIntoView({ behavior: 'smooth' });
+        el.scrollIntoView({ behavior: "smooth" });
       }, 50);
     }
   };
@@ -42,32 +44,34 @@ export default function Navbar() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#faf9f6]/90 backdrop-blur-md border-b border-[#e7e2db]/60 py-3'
-            : 'bg-transparent py-5'
+            ? "bg-[#faf9f6]/90 backdrop-blur-md border-b border-[#e7e2db]/60 py-3"
+            : "bg-transparent py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 lg:pr-12 lg:pl-9 flex items-center justify-between">
           {/* Logo */}
           <a
             href="#"
-            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="flex items-center gap-2 group"
           >
-            <div className="w-7 h-7 rounded-sm bg-[#1e2a39] flex items-center justify-center">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <rect x="1" y="1" width="5" height="5" fill="#b89b5e" />
-                <rect x="8" y="1" width="5" height="5" fill="#faf9f6" opacity="0.7" />
-                <rect x="1" y="8" width="5" height="5" fill="#faf9f6" opacity="0.4" />
-                <rect x="8" y="8" width="5" height="5" fill="#b89b5e" opacity="0.6" />
-              </svg>
+            <div className="w-40 h-7 rounded-sm  flex items-center justify-center">
+              <img
+                src="/PixelAura_logo_transparent.svg"
+                alt="PixelAura Logo"
+                className="w-40 h-30"
+              />
             </div>
-            <span
+            {/* <span
               className="font-serif-display text-[#1f1f1f] text-base tracking-tight leading-none"
               style={{ fontFamily: "'DM Serif Display', serif" }}
             >
               PixelAura
               <span className="text-[#1e2a39]"> Technologies</span>
-            </span>
+            </span> */}
           </a>
 
           {/* Desktop Nav */}
@@ -76,7 +80,10 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link.href);
+                }}
                 className="nav-link gold-underline"
               >
                 {link.label}
@@ -87,7 +94,10 @@ export default function Navbar() {
           {/* CTA */}
           <a
             href="#contact"
-            onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#contact");
+            }}
             className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-xs font-semibold tracking-widest uppercase border border-[#1e2a39]/30 text-[#1e2a39] rounded-full transition-all duration-300 hover:bg-[#1e2a39] hover:text-[#faf9f6] hover:border-[#1e2a39]"
           >
             Get in touch
@@ -122,9 +132,9 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
+            initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
+            exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-40 bg-[#faf9f6] flex flex-col justify-center px-10"
           >
@@ -133,10 +143,17 @@ export default function Navbar() {
                 <motion.a
                   key={link.label}
                   href={link.href}
-                  onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + i * 0.07, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{
+                    delay: 0.1 + i * 0.07,
+                    duration: 0.4,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                   className="font-serif-display text-4xl text-[#1f1f1f] hover:text-[#b89b5e] transition-colors duration-300"
                   style={{ fontFamily: "'DM Serif Display', serif" }}
                 >
@@ -145,7 +162,10 @@ export default function Navbar() {
               ))}
               <motion.a
                 href="#contact"
-                onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("#contact");
+                }}
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.45, duration: 0.4 }}

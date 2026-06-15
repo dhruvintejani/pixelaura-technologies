@@ -39,7 +39,7 @@ export default function About() {
   const { ref: ref2, isInView: inView2 } = useScrollReveal();
 
   return (
-    <section id="about" className="relative py-28 lg:py-25 bg-[#faf9f6]">
+    <section id="about" className="relative py-28 lg:py-24 bg-[#faf9f6]">
       {/* Top divider */}
       <div className="divider mb-0" />
 

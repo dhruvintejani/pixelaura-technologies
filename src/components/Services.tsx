@@ -59,7 +59,7 @@ export default function Services() {
   const { ref, isInView } = useScrollReveal(0.1);
 
   return (
-    <section id="services" className="py-28 lg:py-25 bg-[#f5f1ea]">
+    <section id="services" className="py-25 lg:py-18 bg-[#f5f1ea]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div ref={ref} className="max-w-2xl mb-16 lg:mb-20">

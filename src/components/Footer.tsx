@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -11,41 +9,19 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-xs">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-7 h-7 rounded-sm bg-[#b89b5e]/20 border border-[#b89b5e]/30 flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <rect x="1" y="1" width="5" height="5" fill="#b89b5e" />
-                  <rect
-                    x="8"
-                    y="1"
-                    width="5"
-                    height="5"
-                    fill="#faf9f6"
-                    opacity="0.4"
-                  />
-                  <rect
-                    x="1"
-                    y="8"
-                    width="5"
-                    height="5"
-                    fill="#faf9f6"
-                    opacity="0.2"
-                  />
-                  <rect
-                    x="8"
-                    y="8"
-                    width="5"
-                    height="5"
-                    fill="#b89b5e"
-                    opacity="0.5"
-                  />
-                </svg>
+              <div className="w-40 h-15 flex items-center justify-center bg-white rounded-md p-1 shadow-sm hover:scale-105 transition-transform duration-300">
+                <img
+                  src="/PixelAura_logo.svg"
+                  alt="PixelAura Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <span
+              {/* <span
                 className="font-serif-display text-[#faf9f6] text-base tracking-tight"
                 style={{ fontFamily: "'DM Serif Display', serif" }}
               >
                 PixelAura Technologies
-              </span>
+              </span> */}
             </div>
             <p
               className="text-xs text-[#8a9bb0] font-light leading-relaxed"
@@ -125,7 +101,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <p
                 className="text-[10px] font-semibold text-[#b89b5e] tracking-[0.2em] uppercase mb-4"
                 style={{ fontFamily: "Manrope, sans-serif" }}
@@ -165,7 +141,7 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -182,7 +158,7 @@ export default function Footer() {
           </p>
 
           {/* Social icons */}
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             {[
               {
                 label: "GitHub",
@@ -240,7 +216,7 @@ export default function Footer() {
                 {social.icon}
               </motion.a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

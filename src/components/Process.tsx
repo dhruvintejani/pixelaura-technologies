@@ -28,7 +28,7 @@ export default function Process() {
   const { ref, isInView } = useScrollReveal(0.1);
 
   return (
-    <section id="process" className="py-28 lg:py-25 bg-[#1e2a39] overflow-hidden">
+    <section id="process" className="py-25 lg:py-18 bg-[#1e2a39] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div ref={ref} className="max-w-xl mb-16 lg:mb-20">

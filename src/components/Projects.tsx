@@ -8,7 +8,7 @@ const projects = [
     title: "Inventory Management System",
     description:
       "Full-stack business system for real-world stock tracking, product management, and operational workflows. Built for scale with a clean admin interface.",
-    tech: ["React", "FastAPI", "MongoDB", "Tailwind CSS"],
+    tech: ["React", "Python" ,"FastAPI", "MongoDB", "Tailwind CSS"],
     live: "https://sreya-digital-wear.vercel.app/",
     images: [
       "/projects/SDW_image_1.png",
@@ -75,7 +75,7 @@ export default function Projects() {
   const { ref, isInView } = useScrollReveal(0.1);
 
   return (
-    <section id="projects" className="py-28 lg:py-25 bg-[#faf9f6]">
+    <section id="projects" className="py-25 lg:py-18 bg-[#faf9f6]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
